@@ -49,16 +49,18 @@ Vagrant::Config.run do |config|
     chef.add_recipe "build-essential"
     chef.add_recipe "xml"
     chef.add_recipe "openssl"
-    chef.add_recipe "mysql"
-    chef.add_recipe "php::module_mysql"
     chef.add_recipe "apache2::mod_php5"
+    chef.add_recipe "mysql::server"
+    chef.add_recipe "php::module_mysql"
     chef.add_recipe "phpmyadmin"
     chef.add_recipe "nodejs"
 
     # You may also specify custom JSON attributes:
     chef.json = {
         :mysql => {
-            :server_root_password => 'root'
+            :server_root_password => 'root',
+            :server_repl_password => 'root',
+            :server_debian_password => 'root'
         }
     }
   end
