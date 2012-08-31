@@ -52,7 +52,7 @@ Vagrant::Config.run do |config|
     chef.add_recipe "mysql"
     chef.add_recipe "php::module_mysql"
     chef.add_recipe "apache2::mod_php5"
-    chef.add_recipe "nodejs"
+    chef.add_recipe "phpmyadmin"
     chef.add_recipe "nodejs"
 
     # You may also specify custom JSON attributes:
