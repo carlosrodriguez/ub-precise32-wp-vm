@@ -1,0 +1,10 @@
+<VirtualHost *:80>
+  DocumentRoot <%= @node[:vagrant][:directory]%>/www/website.com/public_html
+  ServerAlias *.xip.io
+        <Directory <%= @node[:vagrant][:directory]%>/www/website.com/public_html >
+                Options Indexes FollowSymLinks MultiViews
+                AllowOverride All
+                Order allow,deny
+                allow from all
+        </Directory>
+</VirtualHost>

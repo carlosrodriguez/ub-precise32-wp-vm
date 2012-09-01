@@ -1,0 +1,13 @@
+#
+# SOCKETBUG
+#
+<VirtualHost *:80>
+  DocumentRoot <%= @node[:vagrant][:directory]%>/www/socketbug.website.com/client
+  ServerName socketbug.localhost
+  ServerAlias socketbug.*.xip.io
+        <Directory <%= @node[:vagrant][:directory]%>/www/socketbug.website.com/client >
+         Options Indexes
+         Order allow,deny
+         Allow from all
+        </Directory>
+</VirtualHost>
